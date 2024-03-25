@@ -1,0 +1,91 @@
+{
+  "bio": {
+    "media": "/assets/3d-headshot-lg.png",
+    "details": {
+      "heading": "Bio",
+      "name": "Rohan Shrestha",
+      "description": "Hard-working developer with a flair for creating elegant solutions to complex problems. Team player with a can-do attitude and a strong focus on client satisfaction. Diverse experience with modern technologies and cloud providers like AWS and GCP with enterprise DevOps experience. Likes to contribute to open-source and create apps on his free time."
+    }
+  },
+  "experience": {
+    "heading": "Experience",
+    "experience": [
+      {
+        "data": "2022",
+        "title": "Executive Member of ICT-Club",
+        "company": "Ngarjuna ICT Club"
+      },
+      {
+        "data": "2023",
+        "title": "Inter - Web Development",
+        "company": "Monal Tech"
+      }
+    ]
+  },
+  "education": {
+    "heading": "Education",
+    "education": [
+      {
+        "date": "Professional Certificate",
+        "degree": "Web Design",
+        "university": "Broadway Infosy"
+      },
+      {
+        "date": "Professional Certificate",
+        "degree": "MERN Stack Developer",
+        "university": "Broadway Infosy"
+      },
+      {
+        "date": "Degree",
+        "degree": "Bachelor Degree in BIM(Bachelor in Information Management)",
+        "university": "Tribhuvan University",
+        "description": "Focus on IT sector and Management Sector"
+      }
+    ]
+  },
+  "profiles": {
+    "heading": "Profiles",
+    "caption": "Stay Connected",
+    "media": null,
+    "button": {
+      "link": "/contact",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    },
+    "profiles": [
+      {
+        "link": "https://github.com/ROHAN-88",
+        "icon": "iconoir-github"
+      },
+      {
+        "link": "https://linkedin.com/in/sal-anvarov",
+        "icon": "iconoir-linkedin"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's <br /> <span>collaborate.</span>",
+    "media": "/assets/icons/icon2.png",
+    "button": {
+      "link": "/contact",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    }
+  },
+  "credentials": {
+    "heading": "Qualifications",
+    "caption": "A little on Sal",
+    "media": "/assets/signature.png",
+    "button": {
+      "link": "/credentials",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    }
+  }
+}
