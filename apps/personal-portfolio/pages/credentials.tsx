@@ -59,7 +59,7 @@ const CredentialsPage = () => {
                     data-aos="zoom-in"
                     key={index}
                   >
-                    <h4>{item.date}</h4>
+                    <h4>{item.data}</h4>
                     <h3>{item.title}</h3>
                     <h5>{item.company}</h5>
                     <p
