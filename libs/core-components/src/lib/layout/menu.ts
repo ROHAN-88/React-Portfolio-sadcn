@@ -11,10 +11,10 @@ export const menu = [
   //   label: 'Portfolio',
   //   path: '/portfolio',
   // },
-  {
-    label: 'Blog',
-    path: '/posts',
-  },
+  // {
+  //   label: 'Blog',
+  //   path: '/posts',
+  // },
   {
     label: 'Contact',
     path: '/contact',
