@@ -7,10 +7,10 @@ export const menu = [
     label: 'Bio',
     path: '/bio',
   },
-  {
-    label: 'Portfolio',
-    path: '/portfolio',
-  },
+  // {
+  //   label: 'Portfolio',
+  //   path: '/portfolio',
+  // },
   {
     label: 'Blog',
     path: '/posts',

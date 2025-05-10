@@ -2,7 +2,7 @@
   "bio": {
     "heading": "Rohan Shrestha",
     "caption": "Designer & Full Stack Developer",
-    "description": "System designer, strategist and web development guru. Builds UX rich and performant websites. Sal had the privilege of building software and consulting for start-ups and big corporations.",
+    "description": "I’m a Full-Stack Developer with 2 years of experience in building scalable web apps using React, Node.js, Flask, and SQL/NoSQL. I write clean, efficient code, build APIs, and work with tools like Git and Docker, focusing on performance, usability, and continuous improvement.",
     "descriptionExtended": "Currently contributing to the design and development efforts at <span class='text-primary-color'>Oproma</span>.",
     "location": "📍 Based in Kathmandu.",
     "media": "/assets/3d-headshot.png",
@@ -85,7 +85,7 @@
         "icon": "iconoir-github"
       },
       {
-        "link": "https://linkedin.com/in/sal-anvarov",
+        "link": "https://www.linkedin.com/in/rohan-shrestha23",
         "icon": "iconoir-globe"
       }
     ]
@@ -93,15 +93,15 @@
   "facts": {
     "quickFacts": [
       {
-        "count": "6+",
+        "count": "2+",
         "label": "YEARS <br /> EXPERIENCE"
       },
       {
-        "count": "60+",
+        "count": "4+",
         "label": "CONSULTATIONS <br /> CONDUCTED"
       },
       {
-        "count": "12+",
+        "count": "3+",
         "label": "PRODUCTION <br /> APPLICATIONS"
       }
     ]

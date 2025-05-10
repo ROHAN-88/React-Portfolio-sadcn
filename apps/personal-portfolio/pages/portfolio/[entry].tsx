@@ -86,7 +86,7 @@ const PortfolioEntryPage = ({
         <>
           <meta name="description" content={frontMatter.description} />
           <meta name="keywords" content={frontMatter.category} />
-          <meta name="author" content={'Sal Anvarov'} />
+          <meta name="author" content={'Rohan Shrestha'} />
           <meta property="og:title" content={frontMatter.title} />
           <meta property="og:description" content={frontMatter.description} />
           <meta

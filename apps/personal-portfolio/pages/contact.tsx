@@ -79,7 +79,7 @@ const ContactPage = () => {
                 <li>
                   <a
                     className="shadow-box"
-                    href="https://linkedin.com/in/sal-anvarov"
+                    href="https://www.linkedin.com/in/rohan-shrestha23"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
