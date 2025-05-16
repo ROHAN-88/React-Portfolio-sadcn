@@ -26,7 +26,9 @@ const LandingPage = () => {
                 <div className="infos">
                   <h4>{en.landing.bio.caption}</h4>
                   <h1>{en.landing.bio.heading}</h1>
-                  <p>{en.landing.bio.description}</p>
+                  <p style={{ textAlign: 'justify' }}>
+                    {en.landing.bio.description}
+                  </p>
                   <br />
                   <p
                     dangerouslySetInnerHTML={{

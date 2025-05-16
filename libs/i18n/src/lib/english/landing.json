@@ -2,8 +2,7 @@
   "bio": {
     "heading": "Rohan Shrestha",
     "caption": "Designer & Full Stack Developer",
-    "description": "Hard-working developer with a flair for creating elegant solutions to complex problems. Team player with a can-do attitude and a strong focus on client satisfaction. Likes to contribute to open-source and create apps on his free time.",
-    "_commentdescription": "I’m a Full-Stack Developer with 2 years of experience in building scalable web apps using React, Node.js, Flask, and SQL/NoSQL. I write clean, efficient code, build APIs, and work with tools like Git and Docker, focusing on performance, usability, and continuous improvement.",
+    "description": "I’m a Full-Stack Developer with 2+ years of experience in building scalable web apps using React, Node.js, Flask, and SQL/NoSQL. I write clean, efficient code, build APIs, and work with tools like Git and Docker, focusing on performance, usability, and continuous improvement.",
     "descriptionExtended": "Currently contributing to the design and development efforts at <span class='text-primary-color'>Oproma</span>.",
     "location": "📍 Based in Kathmandu.",
     "media": "/assets/3d-headshot.png",

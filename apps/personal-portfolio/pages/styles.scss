@@ -577,7 +577,7 @@ ol {
 /* # Header */
 
 .header-area {
-  margin-top: 10px;
+  margin-top: 0px;
 
   .logo {
     display: inline-block;
@@ -585,6 +585,7 @@ ol {
 
     img {
       display: block;
+      height: 100px;
     }
   }
 

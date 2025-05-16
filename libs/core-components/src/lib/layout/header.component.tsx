@@ -28,7 +28,7 @@ export const Header = () => {
     <header className="header-area">
       <div className="container">
         <div className="gx-row d-flex align-items-center justify-content-between">
-          <Link href="/" className="logo">
+          <Link href="/" className="logo h-50">
             <img src="/assets/logo/logo.png" alt="Logo" />
           </Link>
           <nav
@@ -43,14 +43,6 @@ export const Header = () => {
                 </li>
               ))}
             </ul>
-            {/* <a
-              className="theme-btn"
-              href="https://calendly.com/msalanvarov"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-          
-            </a> */}
           </nav>
 
           <ThemeConfigurator />
