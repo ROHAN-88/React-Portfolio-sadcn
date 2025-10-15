@@ -11,6 +11,9 @@ export const postFilePaths = fs
   .filter((path) => /\.mdx?$/.test(path));
 
 // caseStudiesFilePaths is the list of mdx files inside the POSTS_PATH directory
+// export const caseStudiesFilePaths = fs
+//   .readdirSync(CASE_STUDIES_PATH)
+//   .filter((path) => /\.mdx?$/.test(path));
 export const caseStudiesFilePaths = fs
   .readdirSync(CASE_STUDIES_PATH)
-  .filter((path) => /\.mdx?$/.test(path));
+  .filter((file) => file.endsWith('.mdx'));

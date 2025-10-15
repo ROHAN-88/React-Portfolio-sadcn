@@ -24,19 +24,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: false,
   };
 };
-
 export const getStaticProps: GetStaticProps<PortfolioEntryPageProps> = async ({
   params,
 }) => {
   const filePath = `${params?.entry}.mdx`;
   const postFilePath = path.join(CASE_STUDIES_PATH, filePath);
-  const fileContents = fs.readFileSync(postFilePath);
-  const fileMetadata = fs.statSync(path.join(CASE_STUDIES_PATH, filePath));
+
+  // 🛑 Check if file exists first
+  if (!fs.existsSync(postFilePath)) {
+    console.warn(`⚠️ File not found: ${postFilePath}`);
+    // If you want Next.js to show a 404 page for missing entries:
+    return { notFound: true };
+  }
+
+  const fileContents = fs.readFileSync(postFilePath, 'utf8');
+  const fileMetadata = fs.statSync(postFilePath);
 
   const { content, data } = matter(fileContents);
 
   const markdownContent = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
