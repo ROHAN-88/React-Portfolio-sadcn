@@ -1,10 +1,15 @@
-//@ts-check
+// @ts-check
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development', // disable in dev
+});
 
 /**
- * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
+ * @type {import('next').NextConfig}
  **/
 const nextConfig = {
   reactStrictMode: true,
@@ -13,15 +18,15 @@ const nextConfig = {
     removeConsole: process.env.APP_ENV === 'production',
   },
   nx: {
-    // Set this to true if you would like to use SVGR
-    // See: https://github.com/gregberge/svgr
     svgr: false,
   },
 };
 
+// 👇 Compose both Nx and PWA plugins
 const plugins = [
-  // Add more Next.js plugins to this list if needed.
   withNx,
+  withPWA, // add this in the list instead of calling separately
 ];
 
+// 👇 Export combined config
 module.exports = composePlugins(...plugins)(nextConfig);
