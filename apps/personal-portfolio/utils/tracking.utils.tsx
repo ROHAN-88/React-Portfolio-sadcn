@@ -22,7 +22,7 @@ export const registerGTM = () => {
       <>
         {/* Google Tag Manager */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${
+          src={`https://www.google  tagmanager.com/gtag/js?id=${
             process.env.GOOGLE_TAG_MANAGER_UID ?? 'AW-779764156'
           }`}
         />

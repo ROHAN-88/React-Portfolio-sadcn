@@ -1,0 +1,122 @@
+# Project Structure and Issues
+
+This project is an Nx-based React/Next.js monorepo ("React-Portfolio-sadcn"). Below is a high-level overview of the structure and some common issues plus how to solve them.
+
+## 1. Top-level structure
+
+- `.git/` – Git repository metadata.
+- `.next/` – Next.js build output (generated). Can be deleted and rebuilt.
+- `.nginx/` – Nginx-related config for deployment (reverse proxy, static serving rules, etc.).
+- `.nx/` – Nx cache and workspace data.
+- `.vscode/` – Editor configuration (extensions, settings, launch configs).
+- `apps/` – Application projects, typically the main Next.js/React app(s).
+- `assets/` – Shared static assets (images, icons, etc.).
+- `dist/` – Build output for apps/libs when built with Nx.
+- `libs/` – Reusable libraries (UI components, utilities, feature modules).
+- `node_modules/` – Installed dependencies.
+- `tools/` – Custom Nx or repo scripts and generators.
+- Root config files: ESLint, Prettier, Jest, Nx, Docker, etc.
+
+## 2. Important configuration files
+
+- `nx.json` – Nx workspace configuration: projects, tags, default tasks.
+- `tsconfig.base.json` – Base TypeScript configuration shared across apps/libs.
+- `.eslintrc.json`, `.eslintignore` – Linting rules and ignore patterns.
+- `.prettierrc`, `.prettierignore` – Code formatting rules.
+- `jest.config.ts`, `jest.preset.js` – Test configuration.
+- `package.json`, `package-lock.json` – Dependencies and scripts.
+- `Dockerfile`, `.dockerignore`, `compose.yaml` – Docker build and runtime configuration.
+- `.nginx/` files – Nginx site configuration for production.
+
+## 3. Typical app/layout structure (inside apps/)
+
+Although the exact folder names may differ, a Next.js + shadcn/ui portfolio app usually looks like:
+
+- `apps/APP_NAME/app/` or `apps/APP_NAME/src/` – Main source.
+  - `app/page.tsx` (or `pages/index.tsx`) – Home/landing page.
+  - `app/(routes)/...` – Additional routes.
+  - `components/` – Local components.
+  - `styles/` – Global styles, Tailwind config connections.
+- `apps/APP_NAME/public/` – Static files.
+
+## 4. Common issues and how to solve them
+
+### 4.1 Install / dependency issues
+
+**Issue:** `npm run dev` or `nx serve` fails with missing modules or type errors.
+
+**How to solve:**
+1. Ensure dependencies are installed:
+   - `npm install`
+2. If problems persist, clear cache and reinstall:
+   - Delete `node_modules/` and `package-lock.json`.
+   - Run `npm install` again.
+3. Check Node version matches the one recommended in the README or `.nvmrc` (if present).
+
+### 4.2 Nx workspace issues
+
+**Issue:** Nx cannot find a project or task (e.g., `Cannot find project 'portfolio'`).
+
+**How to solve:**
+1. Open `nx.json` and verify that the expected app/lib is listed under `projects`.
+2. Check `project.json` (or `workspace.json`) inside `apps/` or `libs/` for correct `name` and `root`.
+3. Run `npx nx graph` to visualize projects and ensure they are properly registered.
+
+### 4.3 TypeScript path / import issues
+
+**Issue:** Imports like `@/components/button` or `@my-org/ui` fail to resolve.
+
+**How to solve:**
+1. Open `tsconfig.base.json`.
+2. Confirm that `compilerOptions.paths` includes mappings for these aliases, pointing to `apps/*` or `libs/*`.
+3. If you add a new lib or move folders, update `paths` and run `nx reset` or restart the dev server.
+
+### 4.4 ESLint and Prettier conflicts
+
+**Issue:** Lint or format commands fail or give many style errors.
+
+**How to solve:**
+1. Run `npx nx lint APP_NAME` (or `npm run lint`) and read the first few errors.
+2. Adjust rules in `.eslintrc.json` or `.prettierrc` if they conflict with project style.
+3. Use your editor's ESLint/Prettier integration (settings in `.vscode/`) to auto-fix on save.
+
+### 4.5 Build vs. runtime differences
+
+**Issue:** App builds (`nx build` / `npm run build`) but Docker or Nginx deployment fails.
+
+**How to solve:**
+1. Ensure `Dockerfile` is calling the correct build command (e.g., `npx nx build APP_NAME`).
+2. Confirm the built output path (usually `dist/apps/APP_NAME`) matches what Docker/Nginx expects.
+3. Check `.nginx` configs for correct `root` or `proxy_pass` to the Next.js server.
+
+### 4.6 Styling / shadcn/ui issues
+
+**Issue:** Components look broken or unstyled.
+
+**How to solve:**
+1. Verify Tailwind is configured correctly (check `tailwind.config.*` and global CSS).
+2. Confirm that shadcn/ui components are imported from the right `libs` or `components` folder.
+3. Ensure global styles are included in the main entry (e.g., `app/globals.css`).
+
+## 5. Recommended workflow
+
+1. **Develop locally**
+   - `npx nx serve APP_NAME` or `npm run dev` (depending on scripts in `package.json`).
+2. **Lint & test**
+   - `npx nx lint APP_NAME`
+   - `npx nx test APP_NAME`
+3. **Build**
+   - `npx nx build APP_NAME`
+4. **Dockerize & run**
+   - Build: `docker build -t PORTFOLIO_IMAGE_NAME .`
+   - Run: `docker compose up` (uses `compose.yaml`).
+
+## 6. How to extend the project
+
+- Add new pages/routes in the `apps/APP_NAME/app` (or `pages`) directory.
+- Create reusable components in `libs/ui` or similar and export them.
+- Keep cross-cutting logic (hooks, utils) in dedicated libs under `libs/`.
+
+---
+
+This note is a general structural and troubleshooting guide. For more precise details, open the `apps/` and `libs/` directories and review their `project.json` and source files, then update this note with project-specific components, routes, and domain details.
