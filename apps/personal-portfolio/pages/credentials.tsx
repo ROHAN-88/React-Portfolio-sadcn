@@ -103,7 +103,6 @@ const CredentialsPage = () => {
                         data-aos="zoom-in"
                         key={index}
                       >
-                        <span className="percent">{item.percent}</span>
                         <h3 className="name">{item.name}</h3>
                         <p>{item.description}</p>
                       </div>
